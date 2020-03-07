@@ -9,6 +9,19 @@ twoOldestAges( [1, 2, 10, 8] ) // should return [8, 10]
 */
 
 // return the two oldest/oldest ages within the array of ages passed in.
-function twoOldestAges(ages){
+const twoOldestAges = (ages) => {
+  const arr = [];
+  let oldest = ages[0];
+  let youngest = ages[0];
+  for(let i = 1; i < ages.length; i++){
+    if(ages[i] > oldest) {
+      oldest = ages[i];
+    }
+    if(ages[i] < youngest) {
+      youngest = ages[i];
+    }
+  }
+  arr.push(youngest, oldest);
 
+  return arr;
 }
